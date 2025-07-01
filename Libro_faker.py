@@ -25,7 +25,7 @@ def generar_libros_csv(nombre_archivo, num_titulos, ejemplares_por_titulo, ids_a
             for _ in range(ejemplares_por_titulo):
                 libro_id = f"LIB{libro_id_counter:07d}"
                 estado = random.choice(['nuevo', 'usado', 'deteriorado'])
-                disponibilidad = random.choice(['disponible', 'prestado', 'perdido'])
+                disponibilidad = random.choice([True, False])
                 writer.writerow([libro_id, titulo, isbn, editorial, anio, estado, disponibilidad, autor_id])
                 libro_id_counter += 1
 
